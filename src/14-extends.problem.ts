@@ -1,4 +1,4 @@
-import { Equal, Expect } from "./helpers/type-utils";
+import { Equal, Expect } from './helpers/type-utils';
 
 /**
  * Here, the id property is shared between all three
@@ -12,14 +12,12 @@ interface User {
   lastName: string;
 }
 
-interface Post {
-  id: string;
+interface Post extends Omit<User, 'firstName' | 'lastName'> {
   title: string;
   body: string;
 }
 
-interface Comment {
-  id: string;
+interface Comment extends Omit<User, 'firstName' | 'lastName'> {
   comment: string;
 }
 
